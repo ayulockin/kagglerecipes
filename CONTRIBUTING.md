@@ -21,11 +21,13 @@ Please follow the below guidelines for creating and submitting PRs to this repo
     - **Make your changes to notebook**
     - `nbdev_build_lib` - Build the library
     - `nbdev_build_docs` - Build the docs (see note below on docs)
+    
     - [optional] To run the same checks that the Continuous Integration on Github will run:
         - `nbdev_read_nbs`
         - `nbdev_clean_nbs`
         - `nbdev_diff_nbs`
         - `nbdev_test_nbs`
+        
     - `git commit -am "just testing"` - commit your changes
     - `git push -u origin HEAD` if its your first push from this repo/fork, `git push` after that
     - `gh pr create -f` - Create your PR
