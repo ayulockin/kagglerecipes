@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"my_dummy_data": "00_data.ipynb"}
+index = {}
 
-modules = ["data.py"]
+modules = []
 
 doc_url = "https://ayulockin.github.io/braintumor/"
 
