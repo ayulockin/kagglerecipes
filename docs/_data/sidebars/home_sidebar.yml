@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: Data
-      url: core.html
+      url: data.html
     output: web
     title: braintumor
   output: web
