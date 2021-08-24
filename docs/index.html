@@ -65,6 +65,23 @@ nb_path: "nbs\index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Sample-Dataset">Sample Dataset<a class="anchor-link" href="#Sample-Dataset"> </a></h1><p>We are using a subset of dataset for local development and fast prototyping.</p>
+<ul>
+<li>Download it manually from <a href="https://wandb.ai/wandb_fc/rsna-miccai-brain/artifacts/dataset/sample/0c38392ee79fd5f85e97/files">here</a>.</li>
+<li><p>Or download it using this code snippet.</p>
+
+<pre><code>import wandb
+run = wandb.init()
+artifact = run.use_artifact('wandb_fc/rsna-miccai-brain/sample:v0', type='dataset')
+artifact_dir = artifact.download()</code></pre>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2>
 </div>
 </div>
