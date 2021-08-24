@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"log_datadir_as_artifact": "00_utils.ipynb"}
+index = {"VoxelData": "00_preprocess.ipynb",
+         "log_datadir_as_artifact": "00_utils.ipynb"}
 
 modules = ["data.py"]
 
