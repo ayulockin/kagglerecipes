@@ -11,8 +11,8 @@ tmp*
 tags
 
 # data
-data/sample/train/*/*/*.dcm
-data/sample/test/*/*/*.dcm
+data/*/train/*/*/*.dcm
+data/*/test/*/*/*.dcm
 
 # wandb
 nbs/wandb
