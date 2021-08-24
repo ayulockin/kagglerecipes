@@ -12,7 +12,10 @@ entries:
     - output: web,pdf
       title: Data
       url: data.html
+    - output: web,pdf
+      title: Utils
+      url: utils.html
     output: web
-    title: braintumor
+    title: kagglerecipes
   output: web
   title: Sidebar
