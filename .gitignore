@@ -11,8 +11,11 @@ tmp*
 tags
 
 # data
-data/train/*/*/*.dcm
-data/test/*/*/*.dcm
+data/sample/train/*/*/*.dcm
+data/sample/test/*/*/*.dcm
+
+# wandb
+nbs/wandb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

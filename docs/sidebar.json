@@ -1,6 +1,7 @@
 {
-  "braintumor": {
+  "kagglerecipes": {
     "Overview": "/",
-    "Data": "data.html"
+    "Data": "data.html",
+    "Utils": "utils.html"
   }
 }
