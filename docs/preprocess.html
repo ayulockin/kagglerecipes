@@ -76,13 +76,12 @@ This class obtain normalized voxels by appropriately rotating MRI voxels.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="s1">&#39;data/sample/train/&#39;</span>
-<span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># folder = os.listdir(TRAIN_PATH)[0]</span>
 
-<span class="n">connect_voxel</span> <span class="o">=</span> <span class="n">VoxelData</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;T1w&#39;</span><span class="p">))</span>
-<span class="n">flair</span> <span class="o">=</span> <span class="n">connect_voxel</span><span class="o">.</span><span class="n">get_voxel_data</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;FLAIR&#39;</span><span class="p">))</span>
-<span class="n">t1wce</span> <span class="o">=</span> <span class="n">connect_voxel</span><span class="o">.</span><span class="n">get_voxel_data</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;T1wCE&#39;</span><span class="p">))</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">connect_voxel</span><span class="o">.</span><span class="n">get_voxel_data</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;T2w&#39;</span><span class="p">))</span>
+<span class="c1"># connect_voxel = VoxelData(os.path.join(TRAIN_PATH, folder, &#39;T1w&#39;))</span>
+<span class="c1"># flair = connect_voxel.get_voxel_data(os.path.join(TRAIN_PATH, folder, &#39;FLAIR&#39;))</span>
+<span class="c1"># t1wce = connect_voxel.get_voxel_data(os.path.join(TRAIN_PATH, folder, &#39;T1wCE&#39;))</span>
+<span class="c1"># t2 = connect_voxel.get_voxel_data(os.path.join(TRAIN_PATH, folder, &#39;T2w&#39;))</span>
 </pre></div>
 
     </div>

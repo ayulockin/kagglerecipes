@@ -6,7 +6,7 @@ index = {"VoxelData": "00_preprocess.ipynb",
          "log_datadir_as_artifact": "00_utils.ipynb"}
 
 modules = ["preprocess.py",
-           "data.py"]
+           "utils.py"]
 
 doc_url = "https://ayulockin.github.io/kagglerecipes/"
 
