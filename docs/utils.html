@@ -85,9 +85,10 @@ artifact_type: type of the artifact</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_dicom_metadata" class="doc_header"><code>get_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_metadata</code>(<strong><code>path_to_dicom_file</code></strong>, <strong><code>meta_cols</code></strong>)</p>
 </blockquote>
-<p>Returns the metadata of a dicom file as a dictionary.
-path_to_dicom_file: path to the dicom file
-meta_cols: list of metadata columns in the dicom file</p>
+<p>Returns the metadata of a single dicom file as a dictionary.</p>
+<p>Params:
+    path_to_dicom_file: path to the dicom file
+    meta_cols: list of metadata columns to extract</p>
 
 </div>
 
@@ -134,6 +135,91 @@ meta_cols: list of metadata columns in the dicom file</p>
 
 <span class="n">dicom_metadata</span> <span class="o">=</span> <span class="n">get_dicom_metadata</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;T1w&#39;</span><span class="p">,</span> <span class="n">sample_file</span><span class="p">),</span> <span class="n">meta_cols</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">dicom_metadata</span><span class="p">)</span> <span class="o">==</span> <span class="nb">dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_all_dicom_metadata" class="doc_header"><code>get_all_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_dicom_metadata</code>(<strong><code>df</code></strong>, <strong><code>meta_cols</code></strong>)</p>
+</blockquote>
+<p>Retrieve metadata for each BraTS21ID and return as a dataframe.</p>
+<p>Params:
+    df: dataframe with BraTS21IDs
+    meta_cols: list of metadata columns to extract</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_patient_id" class="doc_header"><code>get_patient_id</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_id</code>(<strong><code>patient_id</code></strong>)</p>
+</blockquote>
+<p>Returns the correct patient id of a dicom file.</p>
+<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><p>patient_id: patient id of the dicom file</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">get_patient_id</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;00001&#39;</span>
 </pre></div>
 
     </div>
