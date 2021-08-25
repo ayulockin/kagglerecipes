@@ -6,7 +6,8 @@ index = {"VoxelData": "00_preprocess.ipynb",
          "log_datadir_as_artifact": "00_utils.ipynb",
          "get_dicom_metadata": "00_utils.ipynb",
          "get_all_dicom_metadata": "00_utils.ipynb",
-         "get_patient_id": "00_utils.ipynb"}
+         "get_patient_id": "00_utils.ipynb",
+         "get_image_plane": "00_utils.ipynb"}
 
 modules = ["preprocess.py",
            "utils.py"]
