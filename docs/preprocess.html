@@ -47,7 +47,7 @@ nb_path: "nbs\00_preprocess.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="VoxelData" class="doc_header"><code>class</code> <code>VoxelData</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/data.py#L19" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>VoxelData</code>(<strong><code>reference_dir</code></strong>)</p>
+<h2 id="VoxelData" class="doc_header"><code>class</code> <code>VoxelData</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/preprocess.py#L20" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>VoxelData</code>(<strong><code>reference_dir</code></strong>)</p>
 </blockquote>
 <p>MRI plane type (Axial, Coronal, and Sagittal) is not consistent among patients or MRI scans.
 This class obtain normalized voxels by appropriately rotating MRI voxels.</p>
@@ -76,7 +76,7 @@ This class obtain normalized voxels by appropriately rotating MRI voxels.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="s1">&#39;../data/sample/train&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="s1">&#39;data/sample/train/&#39;</span>
 <span class="n">folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">connect_voxel</span> <span class="o">=</span> <span class="n">VoxelData</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TRAIN_PATH</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;T1w&#39;</span><span class="p">))</span>
