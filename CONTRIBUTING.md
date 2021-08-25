@@ -18,7 +18,9 @@ Please follow the below guidelines for creating and submitting PRs to this repo
 
 ### Do for every change you want to make
     - `git checkout -b add-my-feature` - create a new branch
+    
     - **Make your changes to notebook**
+    
     - `nbdev_build_lib` - Build the library
     - `nbdev_build_docs` - Build the docs (see note below on docs)
     
