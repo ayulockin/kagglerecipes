@@ -13,6 +13,7 @@ tags
 # data
 data/*/train/*/*/*.dcm
 data/*/test/*/*/*.dcm
+data/*csv
 
 # wandb
 nbs/wandb
