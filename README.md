@@ -34,7 +34,7 @@ We are using a subset of dataset for local development and fast prototyping.
 
 Fill me in please! Don't forget code examples:
 
-```python
+```
 # 1+1
 ```
 
