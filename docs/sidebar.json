@@ -3,6 +3,7 @@
     "Overview": "/",
     "Data": "data.html",
     "Preprocess": "preprocess.html",
-    "Utils": "utils.html"
+    "Utils": "utils.html",
+    "Weights & Biases Utils": "wandb_utils.html"
   }
 }
