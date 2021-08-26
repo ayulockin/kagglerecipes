@@ -2,15 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"VoxelData": "01_preprocess.ipynb",
+index = {"TINY_DATA_PATH": "00_data.ipynb",
+         "VoxelData": "01_preprocess.ipynb",
          "kaggle_braintumor_meta_cols": "02_utils.ipynb",
          "get_dicom_metadata": "02_utils.ipynb",
-         "get_all_dicom_metadata": "02_utils.ipynb",
          "get_patient_id": "02_utils.ipynb",
+         "get_patient_BraTS21ID_path": "02_utils.ipynb",
+         "get_all_dicom_metadata": "02_utils.ipynb",
          "get_image_plane": "02_utils.ipynb",
          "log_datadir_as_artifact": "03_wandb_utils.ipynb"}
 
-modules = ["preprocess.py",
+modules = ["data.py",
+           "preprocess.py",
            "utils.py",
            "wandb_utils.py"]
 
