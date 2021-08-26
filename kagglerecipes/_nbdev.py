@@ -11,7 +11,7 @@ index = {"TINY_DATA_PATH": "00_data.ipynb",
          "get_all_dicom_metadata": "02_utils.ipynb",
          "get_image_plane": "02_utils.ipynb",
          "log_datadir_as_artifact": "03_wandb_utils.ipynb",
-         "wandb_plot_basic_charts": "04_wandb_viz.ipynb"}
+         "plot_basic_charts": "04_wandb_viz.ipynb"}
 
 modules = ["data.py",
            "preprocess.py",
