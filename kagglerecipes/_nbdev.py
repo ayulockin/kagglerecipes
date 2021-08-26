@@ -10,12 +10,14 @@ index = {"TINY_DATA_PATH": "00_data.ipynb",
          "get_patient_BraTS21ID_path": "02_utils.ipynb",
          "get_all_dicom_metadata": "02_utils.ipynb",
          "get_image_plane": "02_utils.ipynb",
-         "log_datadir_as_artifact": "03_wandb_utils.ipynb"}
+         "log_datadir_as_artifact": "03_wandb_utils.ipynb",
+         "wandb_plot_basic_charts": "04_wandb_viz.ipynb"}
 
 modules = ["data.py",
            "preprocess.py",
            "utils.py",
-           "wandb_utils.py"]
+           "wandb_utils.py",
+           "wandb_viz.py"]
 
 doc_url = "https://ayulockin.github.io/kagglerecipes/"
 
