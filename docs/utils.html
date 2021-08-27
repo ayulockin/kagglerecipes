@@ -57,6 +57,38 @@ nb_path: "nbs/02_utils.ipynb"
 <h4 id="globtastic" class="doc_header"><code>globtastic</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>globtastic</code>(<strong><code>path</code></strong>:<code>Union</code>[<code>Path</code>, <code>str</code>], <strong><code>recursive</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>symlinks</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>file_glob</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>file_re</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>folder_re</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>skip_file_glob</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>skip_file_re</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>skip_folder_re</code></strong>:<code>str</code>=<em><code>None</code></em>)</p>
 </blockquote>
 <p>A more powerful <code>glob</code>, including regex matches, symlink handling, and skip parameters</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>path</code></strong> : <em><code>typing.Union[pathlib.Path, str]</code></em> <p>path to start searching</p></li>
+</ul>
+<ul>
+<li><strong><code>recursive</code></strong> : <em><code>&lt;class 'bool'&gt;</code></em>, <em>optional</em> <p>search subfolders</p></li>
+</ul>
+<ul>
+<li><strong><code>symlinks</code></strong> : <em><code>&lt;class 'bool'&gt;</code></em>, <em>optional</em>  <p>follow symlinks?</p></li>
+</ul>
+<ul>
+<li><strong><code>file_glob</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>  <p>Only include files matching glob</p></li>
+</ul>
+<ul>
+<li><strong><code>file_re</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>    <p>Only include files matching regex</p></li>
+</ul>
+<ul>
+<li><strong><code>folder_re</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>  <p>Only enter folders matching regex</p></li>
+</ul>
+<ul>
+<li><strong><code>skip_file_glob</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>Skip files matching glob</p></li>
+</ul>
+<ul>
+<li><strong><code>skip_file_re</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>   <p>Skip files matching regex</p></li>
+</ul>
+<ul>
+<li><strong><code>skip_folder_re</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>Skip folders matching regex</p></li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><em><code>&lt;class 'fastcore.foundation.L'&gt;</code></em>  <p>Paths to matched files</p></li>
+</ul>
 
 </div>
 
@@ -89,6 +121,10 @@ nb_path: "nbs/02_utils.ipynb"
 <h4 id="compile_re" class="doc_header"><code>compile_re</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>compile_re</code>(<strong><code>pat</code></strong>)</p>
 </blockquote>
 <p>Compile <code>pat</code> if it's not None</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>pat</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -114,6 +150,22 @@ nb_path: "nbs/02_utils.ipynb"
 <h4 id="walk" class="doc_header"><code>walk</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>walk</code>(<strong><code>path</code></strong>:<code>Path'&gt;, &lt;class 'str'&gt;)</code>, <strong><code>symlinks</code></strong>:<code>bool</code>=<em><code>True</code></em>, <strong><code>keep_file</code></strong>:<code>callable</code>=<em><code>noop</code></em>, <strong><code>keep_folder</code></strong>:<code>callable</code>=<em><code>noop</code></em>, <strong><code>func</code></strong>:<code>callable</code>=<em><code>join</code></em>)</p>
 </blockquote>
 <p>Generator version of <code>os.walk</code>, using functions to filter files and folders</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>path</code></strong> : <em><code>(&lt;class 'pathlib.Path'&gt;, &lt;class 'str'&gt;)</code></em> <p>path to start searching</p></li>
+</ul>
+<ul>
+<li><strong><code>symlinks</code></strong> : <em><code>&lt;class 'bool'&gt;</code></em>, <em>optional</em>  <p>follow symlinks?</p></li>
+</ul>
+<ul>
+<li><strong><code>keep_file</code></strong> : <em><code>&lt;built-in function callable&gt;</code></em>, <em>optional</em>   <p>function that returns True for wanted files</p></li>
+</ul>
+<ul>
+<li><strong><code>keep_folder</code></strong> : <em><code>&lt;built-in function callable&gt;</code></em>, <em>optional</em> <p>function that returns True for folders to enter</p></li>
+</ul>
+<ul>
+<li><strong><code>func</code></strong> : <em><code>&lt;built-in function callable&gt;</code></em>, <em>optional</em>    <p>function to apply to each matched file</p></li>
+</ul>
 
 </div>
 
@@ -176,12 +228,16 @@ nb_path: "nbs/02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_dicom_metadata" class="doc_header"><code>get_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_metadata</code>(<strong><code>path_to_dicom_file</code></strong>, <strong><code>meta_cols</code></strong>)</p>
+<h4 id="get_dicom_metadata" class="doc_header"><code>get_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L105" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_metadata</code>(<strong><code>path_to_dicom_file</code></strong>:<code>str</code>, <strong><code>meta_cols</code></strong>:<code>list</code>)</p>
 </blockquote>
 <p>Returns the metadata of a single dicom file as a dictionary.</p>
-<p>Params:
-    path_to_dicom_file: path to the dicom file
-    meta_cols: list of metadata columns to extract</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>path_to_dicom_file</code></strong> : <em><code>&lt;class 'str'&gt;</code></em> <p>path to the dicom file</p></li>
+</ul>
+<ul>
+<li><strong><code>meta_cols</code></strong> : <em><code>&lt;class 'list'&gt;</code></em> <p>list of metadata columns to extract from the dicom file</p></li>
+</ul>
 
 </div>
 
@@ -244,11 +300,13 @@ nb_path: "nbs/02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_patient_id" class="doc_header"><code>get_patient_id</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_id</code>(<strong><code>patient_id</code></strong>)</p>
+<h4 id="get_patient_id" class="doc_header"><code>get_patient_id</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_id</code>(<strong><code>patient_id</code></strong>:<code>int</code>)</p>
 </blockquote>
-<p>Returns the correct patient id of a dicom file.</p>
-<p>Params:
-    patient_id: patient id of the dicom file</p>
+<p>Returns a patient id as a string, formatted as the Kaggle Brain Tumor competition data expects e.g 20 will return 00020</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>patient_id</code></strong> : <em><code>&lt;class 'int'&gt;</code></em> <p>patient id of the dicom file</p></li>
+</ul>
 
 </div>
 
@@ -302,8 +360,16 @@ nb_path: "nbs/02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_patient_BraTS21ID_path" class="doc_header"><code>get_patient_BraTS21ID_path</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L142" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_BraTS21ID_path</code>(<strong><code>row</code></strong>, <strong><code>path_type</code></strong>)</p>
+<h4 id="get_patient_BraTS21ID_path" class="doc_header"><code>get_patient_BraTS21ID_path</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_BraTS21ID_path</code>(<strong><code>row</code></strong>, <strong><code>path</code></strong>:<code>str</code>)</p>
 </blockquote>
+<p>Construct the path to a patient id folder from a DataFrame row</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>row</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em> <p>Row from a DataFrame</p></li>
+</ul>
+<ul>
+<li><strong><code>path</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>   <p>Path to patient folders, e.g. could be "train" or "test"</p></li>
+</ul>
 
 </div>
 
@@ -353,13 +419,19 @@ nb_path: "nbs/02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_dicom_metadata" class="doc_header"><code>get_all_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L147" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_dicom_metadata</code>(<strong><code>df</code></strong>, <strong><code>meta_cols</code></strong>:<code>list</code>, <strong><code>scan_types</code></strong>:<code>list</code>=<em><code>['FLAIR', 'T1w', 'T1wCE', 'T2w']</code></em>)</p>
+<h4 id="get_all_dicom_metadata" class="doc_header"><code>get_all_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_dicom_metadata</code>(<strong><code>df</code></strong>, <strong><code>meta_cols</code></strong>:<code>list</code>, <strong><code>scan_types</code></strong>:<code>list</code>=<em><code>['FLAIR', 'T1w', 'T1wCE', 'T2w']</code></em>)</p>
 </blockquote>
-<p>Retrieve metadata for each BraTS21ID and return as a dataframe.</p>
-<p>Params:
-    df: dataframe with patient folder ids and BraTS21IDs
-    meta_cols: list of metadata columns to extract
-    scan_types: list of strings of mdedical scan types, default: ['FLAIR', 'T1w', 'T1wCE', 'T2w']</p>
+<p>Reads dicom files and returns a dataframe of all dicom metadata, for each BraTS21ID id and each scan type folder.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>df</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em>  <p>DataFrame with patient folder ids and BraTS21IDs</p></li>
+</ul>
+<ul>
+<li><strong><code>meta_cols</code></strong> : <em><code>&lt;class 'list'&gt;</code></em> <p>List of metadata columns to extract</p></li>
+</ul>
+<ul>
+<li><strong><code>scan_types</code></strong> : <em><code>&lt;class 'list'&gt;</code></em>, <em>optional</em>    <p>List of strings of mdedical scan types, default: ['FLAIR', 'T1w', 'T1wCE', 'T2w']</p></li>
+</ul>
 
 </div>
 
@@ -423,11 +495,13 @@ nb_path: "nbs/02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_image_plane" class="doc_header"><code>get_image_plane</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L171" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_plane</code>(<strong><code>data</code></strong>)</p>
+<h4 id="get_image_plane" class="doc_header"><code>get_image_plane</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L170" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_plane</code>(<strong><code>data</code></strong>:<code>dict</code>)</p>
 </blockquote>
 <p>Returns the MRI's plane from the dicom data.</p>
-<p>Params:
-    data: dictionary of dicom metadata</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>data</code></strong> : <em><code>&lt;class 'dict'&gt;</code></em>  <p>Dictionary of dicom metadata</p></li>
+</ul>
 
 </div>
 

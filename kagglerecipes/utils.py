@@ -102,14 +102,12 @@ kaggle_braintumor_meta_cols = ['SpecificCharacterSet','ImageType','SOPClassUID',
              'WindowWidth', 'RescaleIntercept', 'RescaleSlope', 'RescaleType']
 
 # Cell
-def get_dicom_metadata(path_to_dicom_file, meta_cols):
-    """
-    Returns the metadata of a single dicom file as a dictionary.
+def get_dicom_metadata(
+    path_to_dicom_file:str, # path to the dicom file
+    meta_cols:list # list of metadata columns to extract from the dicom file
+):
+    "Returns the metadata of a single dicom file as a dictionary."
 
-    Params:
-        path_to_dicom_file: path to the dicom file
-        meta_cols: list of metadata columns to extract
-    """
     dicom_object = pydicom.dcmread(path_to_dicom_file)
 
     col_dict_train = dict()
@@ -122,13 +120,11 @@ def get_dicom_metadata(path_to_dicom_file, meta_cols):
     return col_dict_train
 
 # Cell
-def get_patient_id(patient_id):
-    """
-    Returns the correct patient id of a dicom file.
+def get_patient_id(
+    patient_id:int # patient id of the dicom file
+):
+    "Returns a patient id as a string, formatted as the Kaggle Brain Tumor competition data expects e.g 20 will return 00020"
 
-    Params:
-        patient_id: patient id of the dicom file
-    """
     if patient_id < 10:
         return '0000'+str(patient_id)
     elif patient_id >= 10 and patient_id < 100:
@@ -139,20 +135,23 @@ def get_patient_id(patient_id):
         return '0'+str(patient_id)
 
 # Cell
-def get_patient_BraTS21ID_path(row, path_type):
+def get_patient_BraTS21ID_path(
+    row,  # Row from a DataFrame
+    path:str # Path to patient folders, e.g. could be "train" or "test"
+):
+    "Construct the path to a patient id folder from a DataFrame row"
+
     patient_id = get_patient_id(int(row.BraTS21ID))
-    return f'{path_type}/{patient_id}/'
+    return f'{path}/{patient_id}/'
 
 # Cell
-def get_all_dicom_metadata(df, meta_cols:list, scan_types:list=['FLAIR', 'T1w', 'T1wCE', 'T2w']):
-    """
-    Retrieve metadata for each BraTS21ID and return as a dataframe.
+def get_all_dicom_metadata(
+    df,  # DataFrame with patient folder ids and BraTS21IDs
+    meta_cols:list,  # List of metadata columns to extract
+    scan_types:list=['FLAIR', 'T1w', 'T1wCE', 'T2w']  # List of strings of mdedical scan types, default: ['FLAIR', 'T1w', 'T1wCE', 'T2w']
+):
+    "Reads dicom files and returns a dataframe of all dicom metadata, for each BraTS21ID id and each scan type folder."
 
-    Params:
-        df: dataframe with patient folder ids and BraTS21IDs
-        meta_cols: list of metadata columns to extract
-        scan_types: list of strings of mdedical scan types, default: ['FLAIR', 'T1w', 'T1wCE', 'T2w']
-    """
     meta_cols_dict = []
     for i in tqdm(range(len(df))):
         row = df.iloc[i]
@@ -168,14 +167,11 @@ def get_all_dicom_metadata(df, meta_cols:list, scan_types:list=['FLAIR', 'T1w', 
     return pd.DataFrame(meta_cols_dict)
 
 # Cell
-def get_image_plane(data):
-    '''
-    Returns the MRI's plane from the dicom data.
+def get_image_plane(
+    data:dict  # Dictionary of dicom metadata
+):
+    "Returns the MRI's plane from the dicom data."
 
-    Params:
-        data: dictionary of dicom metadata
-
-    '''
     x1,y1,_,x2,y2,_ = [round(j) for j in ast.literal_eval(data.ImageOrientationPatient)]
     cords = [x1,y1,x2,y2]
 
