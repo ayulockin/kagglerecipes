@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # Pydicom related imports
 import pydicom
 from pydicom.pixel_data_handlers.util import apply_voi_lut
-import SimpleITK as sitk
+import SimpleTK as sitk
 
 
 # Cell
@@ -22,7 +22,7 @@ class VoxelData():
     MRI plane type (Axial, Coronal, and Sagittal) is not consistent among patients or MRI scans.
     This class obtain normalized voxels by appropriately rotating MRI voxels.
     """
-    def __init__(self, reference_dir):
+    def __init__(self, reference_dir:str):
         # Set up SITK reader
         self.reader = sitk.ImageSeriesReader()
         self.reader.LoadPrivateTagsOn()
