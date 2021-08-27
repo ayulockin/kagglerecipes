@@ -13,10 +13,12 @@ tags
 # data
 data/*/train/*/*/*.dcm
 data/*/test/*/*/*.dcm
+data/*/*/*.npy
 data/*csv
 
 # wandb
 nbs/wandb
+nbs/exploration/wandb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -43,7 +43,7 @@ nb_path: "nbs\02_utils.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">kagglerecipes.wandb_utils</span> <span class="kn">import</span> <span class="n">log_datadir_as_artifact</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">kagglerecipes.wandb_utils</span> <span class="kn">import</span> <span class="n">log_data_as_artifact</span>
 <span class="kn">from</span> <span class="nn">kagglerecipes.data</span> <span class="kn">import</span> <span class="n">TINY_DATA_PATH</span>
 </pre></div>
 
@@ -98,7 +98,7 @@ nb_path: "nbs\02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_dicom_metadata" class="doc_header"><code>get_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_metadata</code>(<strong><code>path_to_dicom_file</code></strong>, <strong><code>meta_cols</code></strong>)</p>
+<h4 id="get_dicom_metadata" class="doc_header"><code>get_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dicom_metadata</code>(<strong><code>path_to_dicom_file</code></strong>, <strong><code>meta_cols</code></strong>)</p>
 </blockquote>
 <p>Returns the metadata of a single dicom file as a dictionary.</p>
 <p>Params:
@@ -166,10 +166,11 @@ nb_path: "nbs\02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_patient_id" class="doc_header"><code>get_patient_id</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_id</code>(<strong><code>patient_id</code></strong>)</p>
+<h4 id="get_patient_id" class="doc_header"><code>get_patient_id</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_id</code>(<strong><code>patient_id</code></strong>)</p>
 </blockquote>
 <p>Returns the correct patient id of a dicom file.</p>
-<h2 id="Parameters">Parameters<a class="anchor-link" href="#Parameters"> </a></h2><p>patient_id: patient id of the dicom file</p>
+<p>Params:
+    patient_id: patient id of the dicom file</p>
 
 </div>
 
@@ -223,7 +224,7 @@ nb_path: "nbs\02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_patient_BraTS21ID_path" class="doc_header"><code>get_patient_BraTS21ID_path</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_BraTS21ID_path</code>(<strong><code>row</code></strong>, <strong><code>path_type</code></strong>)</p>
+<h4 id="get_patient_BraTS21ID_path" class="doc_header"><code>get_patient_BraTS21ID_path</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_patient_BraTS21ID_path</code>(<strong><code>row</code></strong>, <strong><code>path_type</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -274,7 +275,7 @@ nb_path: "nbs\02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_all_dicom_metadata" class="doc_header"><code>get_all_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L78" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_dicom_metadata</code>(<strong><code>df</code></strong>, <strong><code>meta_cols</code></strong>:<code>list</code>, <strong><code>scan_types</code></strong>:<code>list</code>=<em><code>['FLAIR', 'T1w', 'T1wCE', 'T2w']</code></em>)</p>
+<h4 id="get_all_dicom_metadata" class="doc_header"><code>get_all_dicom_metadata</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_all_dicom_metadata</code>(<strong><code>df</code></strong>, <strong><code>meta_cols</code></strong>:<code>list</code>, <strong><code>scan_types</code></strong>:<code>list</code>=<em><code>['FLAIR', 'T1w', 'T1wCE', 'T2w']</code></em>)</p>
 </blockquote>
 <p>Retrieve metadata for each BraTS21ID and return as a dataframe.</p>
 <p>Params:
@@ -344,7 +345,7 @@ nb_path: "nbs\02_utils.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_image_plane" class="doc_header"><code>get_image_plane</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L102" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_plane</code>(<strong><code>data</code></strong>)</p>
+<h4 id="get_image_plane" class="doc_header"><code>get_image_plane</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/utils.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_image_plane</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
 <p>Returns the MRI's plane from the dicom data.</p>
 <p>Params:
