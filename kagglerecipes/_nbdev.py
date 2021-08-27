@@ -4,6 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"TINY_DATA_PATH": "00_data.ipynb",
          "VoxelData": "01_preprocess.ipynb",
+         "globtastic": "02_utils.ipynb",
+         "compile_re": "02_utils.ipynb",
+         "walk": "02_utils.ipynb",
          "kaggle_braintumor_meta_cols": "02_utils.ipynb",
          "get_dicom_metadata": "02_utils.ipynb",
          "get_patient_id": "02_utils.ipynb",
