@@ -5,9 +5,11 @@ __all__ = ['kaggle_braintumor_meta_cols', 'get_dicom_metadata', 'get_patient_id'
 
 # Cell
 import os
+import ast
 import wandb
-import pandas as pd
 import numpy as np
+import pandas as pd
+from tqdm import tqdm
 from pathlib import Path
 from fastcore.xtras import globtastic
 
@@ -56,9 +58,8 @@ def get_patient_id(patient_id):
     """
     Returns the correct patient id of a dicom file.
 
-    Parameters
-    ----------
-    patient_id: patient id of the dicom file
+    Params:
+        patient_id: patient id of the dicom file
     """
     if patient_id < 10:
         return '0000'+str(patient_id)
@@ -85,7 +86,7 @@ def get_all_dicom_metadata(df, meta_cols:list, scan_types:list=['FLAIR', 'T1w', 
         scan_types: list of strings of mdedical scan types, default: ['FLAIR', 'T1w', 'T1wCE', 'T2w']
     """
     meta_cols_dict = []
-    for i in range(len(df)):
+    for i in tqdm(range(len(df))):
         row = df.iloc[i]
         path = Path(row.path)
         for scan_type in scan_types:
