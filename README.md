@@ -4,6 +4,10 @@
 
 ![kaggle_wandb.png](nbs/data/images/kaggle_wandb.png)
 
+## What's New
+#### Aug 27, 2021
+- Adds X,Y,Z
+
 ## Kaggle Competitions
 - [RSNA-MICCAI Brain Tumor Radiogenomic Classification](https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification)
 
