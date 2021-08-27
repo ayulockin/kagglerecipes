@@ -10,30 +10,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Cell
-def plot_basic_charts(chart_type='line', x_data=None, y_data=None, x_name=None,
-                      y_name=None, chart_title=None, wandb_chart_name='basic-chart'):
-    """
-    Plot basic W&B charts.
+def plot_basic_charts(
+    chart_type:str='line',  #  Choose a basic chart type to plot, 'line', 'bar', 'scatter' (default:'line')
+    x_data:str=None,  # x-axis data
+    y_data:str=None,  # y-axis data.
+    x_name:str=None,  # x-axis name.
+    y_name:str=None,  # y-axis name.
+    chart_title:str=None,  # Chart title.
+    wandb_chart_name:str='basic-chart'  # Chart name.
+):
 
-    Parameters
-    ----------
-    chart_type: str
-        Choose a basic chart type to plot.
-        - 'line'
-        - 'bar'
-        - 'scatter'
-    x_data : list, optional
-        x-axis data.
-    y_data : list, optional
-        y-axis data.
-    x_name : str, optional
-        x-axis name.
-    y_name : str, optional
-        y-axis name.
-    chart_title : str, optional
-        Chart title.
-    wandb_chart_name : str, optional
-        Chart name.
+    '''
+    Plot basic W&B charts."
 
     Returns
     -------
@@ -41,17 +29,18 @@ def plot_basic_charts(chart_type='line', x_data=None, y_data=None, x_name=None,
 
     Examples
     --------
-    # Plot a simple line chart.
+    -- Plot a simple line chart.
     plot_basic_charts(chart_type='line', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple line chart")
 
-    # Plot a simple bar chart.
+    -- Plot a simple bar chart.
     plot_basic_charts(chart_type='bar', x_data=['a','b','c','d','e'], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple bar chart")
     Note: When plotting a bar chart, x_data is the labels while y_data is the values.
 
-    # Plot a simple scatter plot.
+
     plot_basic_charts(chart_type='scatter', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple scatter chart")
     """
-    # [TODO] Should we initialize W&B run inside the function?
+    -- [TODO] Should we initialize W&B run inside the function?
+    '''
 
     data = [[x, y] for (x, y) in zip(x_data, y_data)]
     table = wandb.Table(data=data, columns = [x_name, y_name])

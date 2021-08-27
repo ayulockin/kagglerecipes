@@ -142,7 +142,7 @@ def get_patient_BraTS21ID_path(
     "Construct the path to a patient id folder from a DataFrame row"
 
     patient_id = get_patient_id(int(row.BraTS21ID))
-    return f'{path_type}/{patient_id}/'
+    return f'{path}/{patient_id}/'
 
 # Cell
 def get_all_dicom_metadata(

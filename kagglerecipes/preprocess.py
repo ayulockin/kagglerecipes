@@ -13,8 +13,7 @@ import matplotlib.pyplot as plt
 # Pydicom related imports
 import pydicom
 from pydicom.pixel_data_handlers.util import apply_voi_lut
-import SimpleTK as sitk
-
+import SimpleITK as sitk
 
 # Cell
 class VoxelData():

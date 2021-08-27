@@ -13,9 +13,8 @@ index = {"TINY_DATA_PATH": "00_data.ipynb",
          "get_patient_BraTS21ID_path": "02_utils.ipynb",
          "get_all_dicom_metadata": "02_utils.ipynb",
          "get_image_plane": "02_utils.ipynb",
-         "log_data_as_artifact": "03_wandb_utils.ipynb",
-         "log_model_as_artifact": "03_wandb_utils.ipynb",
          "log_df_as_tables": "03_wandb_utils.ipynb",
+         "log_to_artifacts": "03_wandb_utils.ipynb",
          "plot_basic_charts": "04_wandb_viz.ipynb"}
 
 modules = ["data.py",
