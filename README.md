@@ -1,20 +1,34 @@
-# Kaggle RSNA-MICCAI Brain Tumor
-> Useful code and scripts for the RSNA-MICCAI Brain Tumor Radiogenomic Classification Kaggle competition
+# 🥇 Kaggle Recipes 🥇
+> Helpful data preprocessing, training and visualisatoin code and scripts for a range Kaggle competitions, supported by Weights & Biases. Less spaghetti code, more visualisation -> better results
 
 
-This file will become your README and also the index of your documentation.
+![kaggle_wandb.png](nbs/data/images/kaggle_wandb.png)
+
+## Kaggle Competitions
+- [RSNA-MICCAI Brain Tumor Radiogenomic Classification](https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification)
+
+## Code & Scripts
+
+#### RSNA-MICCAI Brain Tumor Radiogenomic Classification
+- LINK TO NOTEBOOK
 
 ## Install
 
-`pip install brain_tumor`
+`pip install kagglerecipes`
 
-## Library Structure:
-- data
-- utils
-- preprocess
-- postprocess
-- viz
-- train
+## Sample Datasets 
+
+We have also logged smaller subsets of Kaggle commpeition datasets local development and fast prototyping. 
+
+#### RSNA-MICCAI Brain Tumor Radiogenomic Classification
+* Download it manually from [here](https://wandb.ai/wandb_fc/rsna-miccai-brain/artifacts/dataset/sample/0c38392ee79fd5f85e97/files).
+* Or download it using this code snippet.
+  ```
+  import wandb
+  run = wandb.init()
+  artifact = run.use_artifact('wandb_fc/rsna-miccai-brain/sample:v0', type='dataset')
+  artifact_dir = artifact.download()
+  ```
 
 # Sample Dataset 
 
@@ -29,18 +43,3 @@ We are using a subset of dataset for local development and fast prototyping.
   artifact = run.use_artifact('wandb_fc/rsna-miccai-brain/sample:v0', type='dataset')
   artifact_dir = artifact.download()
   ```
-
-## How to use
-
-Fill me in please! Don't forget code examples:
-
-```
-# 1+1
-```
-
-
-
-
-    2
-
-
