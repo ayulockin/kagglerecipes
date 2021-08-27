@@ -21,25 +21,21 @@ def plot_basic_charts(
 ):
 
     '''
-    Plot basic W&B charts."
+    Plot basic W&B charts.
 
-    Returns
-    -------
-    None
 
-    Examples
+    #### Examples
     --------
-    -- Plot a simple line chart.
+    **Plot a simple line chart**
     plot_basic_charts(chart_type='line', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple line chart")
 
-    -- Plot a simple bar chart.
+    **Plot a simple bar chart**
     plot_basic_charts(chart_type='bar', x_data=['a','b','c','d','e'], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple bar chart")
+
     Note: When plotting a bar chart, x_data is the labels while y_data is the values.
 
-
+    **Plot a simple scatter chart**
     plot_basic_charts(chart_type='scatter', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple scatter chart")
-    """
-    -- [TODO] Should we initialize W&B run inside the function?
     '''
 
     data = [[x, y] for (x, y) in zip(x_data, y_data)]
