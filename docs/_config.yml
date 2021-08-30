@@ -1,9 +1,9 @@
-repository: ayulockin/braintumor
+repository: ayulockin/kagglerecipes
 output: web
-topnav_title: braintumor
-site_title: braintumor
+topnav_title: kagglerecipes
+site_title: kagglerecipes
 company_name: W&B Internal Team
-description: Starter code for RSNA-MICCAI Brain Tumor Radiogenomic Classification Kaggle competition.
+description: Useful code for different Kaggle competitions. Currently covering RSNA-MICCAI Brain Tumor Radiogenomic Classification Kaggle competition.
 # Set to false to disable KaTeX math
 use_math: true
 # Add Google analytics id if you have one and want to use it here
