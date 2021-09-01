@@ -20,8 +20,7 @@ index = {"TINY_DATA_PATH": "00_data.ipynb",
 modules = ["data.py",
            "preprocess.py",
            "utils.py",
-           "wandb_utils.py",
-           "wandb_viz.py"]
+           "wandb_utils.py"]
 
 doc_url = "https://ayulockin.github.io/kagglerecipes/"
 
