@@ -22,7 +22,7 @@ entries:
       title: Weights & Biases Utils
       url: wandb_utils.html
     - output: web,pdf
-      title: wandb_viz
+      title: Weights and Biases Visualizations
       url: wandb_viz.html
     output: web
     title: kagglerecipes
