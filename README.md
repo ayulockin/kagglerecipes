@@ -6,6 +6,9 @@
 
 ## What's New
 
+#### Sept 3, 2021
+- Bug fix
+
 #### Sept 2, 2021
 - Release version 0.0.3
 - Added support for multiprocessing to extract DICOM metadata for RSNA-MICCAI Brain Tumor Classification competition.
