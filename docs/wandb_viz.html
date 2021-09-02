@@ -45,52 +45,61 @@ nb_path: "nbs\04_wandb_viz.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_basic_charts</span><span class="p">(</span>
-    <span class="n">chart_type</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span>  <span class="c1">#  Choose a basic chart type to plot, &#39;line&#39;, &#39;bar&#39;, &#39;scatter&#39; (default:&#39;line&#39;)</span>
-    <span class="n">x_data</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># x-axis data</span>
-    <span class="n">y_data</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># y-axis data.</span>
-    <span class="n">x_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># x-axis name.</span>
-    <span class="n">y_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># y-axis name.</span>
-    <span class="n">chart_title</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Chart title.</span>
-    <span class="n">wandb_chart_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;basic-chart&#39;</span>  <span class="c1"># Chart name.</span>
-<span class="p">):</span>
+<div class="output_wrapper">
+<div class="output">
 
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Plot basic W&amp;B charts.</span>
-<span class="sd">    </span>
-<span class="sd">    </span>
-<span class="sd">    #### Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    **Plot a simple line chart**</span>
-<span class="sd">    plot_basic_charts(chart_type=&#39;line&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple line chart&quot;)</span>
-<span class="sd">    </span>
-<span class="sd">    **Plot a simple bar chart**</span>
-<span class="sd">    plot_basic_charts(chart_type=&#39;bar&#39;, x_data=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple bar chart&quot;)</span>
-<span class="sd">    </span>
-<span class="sd">    Note: When plotting a bar chart, x_data is the labels while y_data is the values.</span>
-<span class="sd">    </span>
-<span class="sd">    **Plot a simple scatter chart**</span>
-<span class="sd">    plot_basic_charts(chart_type=&#39;scatter&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple scatter chart&quot;)</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)]</span>
-    <span class="n">table</span> <span class="o">=</span> <span class="n">wandb</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">])</span>
-    
-    <span class="k">if</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;line&#39;</span><span class="p">:</span>
-        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
-    <span class="k">elif</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span>
-        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
-    <span class="k">elif</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;scatter&#39;</span><span class="p">:</span>
-        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
-</pre></div>
+<div class="output_area">
 
-    </div>
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="plot_basic_charts" class="doc_header"><code>plot_basic_charts</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/wandb_viz.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>plot_basic_charts</code>(<strong><code>chart_type</code></strong>:<code>str</code>=<em><code>'line'</code></em>, <strong><code>x_data</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>y_data</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>x_name</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>y_name</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>chart_title</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>wandb_chart_name</code></strong>:<code>str</code>=<em><code>'basic-chart'</code></em>)</p>
+</blockquote>
+<p>Plot basic W&amp;B charts.</p>
+<h4 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h4><hr>
+<p><strong>Plot a simple line chart</strong>
+plot_basic_charts(chart_type='line', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple line chart")</p>
+<p><strong>Plot a simple bar chart</strong>
+plot_basic_charts(chart_type='bar', x_data=['a','b','c','d','e'], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple bar chart")</p>
+<p>Note: When plotting a bar chart, x_data is the labels while y_data is the values.</p>
+<p><strong>Plot a simple scatter chart</strong>
+plot_basic_charts(chart_type='scatter', x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name="x", y_name="y", chart_title="Simple scatter chart")</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>chart_type</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>Choose a basic chart type to plot, 'line', 'bar', 'scatter' (default:'line')</p></li>
+</ul>
+<ul>
+<li><strong><code>x_data</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>x-axis data</p></li>
+</ul>
+<ul>
+<li><strong><code>y_data</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>y-axis data.</p></li>
+</ul>
+<ul>
+<li><strong><code>x_name</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>x-axis name.</p></li>
+</ul>
+<ul>
+<li><strong><code>y_name</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em> <p>y-axis name.</p></li>
+</ul>
+<ul>
+<li><strong><code>chart_title</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>    <p>Chart title.</p></li>
+</ul>
+<ul>
+<li><strong><code>wandb_chart_name</code></strong> : <em><code>&lt;class 'str'&gt;</code></em>, <em>optional</em>   <p>Chart name.</p></li>
+</ul>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -133,7 +142,7 @@ nb_path: "nbs\04_wandb_viz.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="log_images" class="doc_header"><code>log_images</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/wandb_viz.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_images</code>(<strong><code>images</code></strong>:<code>list</code>, <strong><code>log_as_sequence</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="log_images" class="doc_header"><code>log_images</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/wandb_viz.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_images</code>(<strong><code>images</code></strong>:<code>list</code>, <strong><code>log_as_sequence</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Log images to wandb. You can pass in list of images as ndarray, PIL Image, or filepath.</p>
 <h4 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h4><hr>
