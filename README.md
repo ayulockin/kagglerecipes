@@ -2,7 +2,7 @@
 
 
 
-![kaggle_wandb.png](nbs\data\images\kaggle_wandb.png)
+![kaggle_wandb.png](https://github.com/ayulockin/kagglerecipes/blob/master/nbs/data/images/kaggle_wandb.png)
 
 ## What's New
 
