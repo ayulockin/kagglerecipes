@@ -15,7 +15,8 @@ index = {"TINY_DATA_PATH": "00_data.ipynb",
          "get_all_BraTS21_dicom_meta": "02_utils.ipynb",
          "get_image_plane": "02_utils.ipynb",
          "log_df_as_tables": "03_wandb_utils.ipynb",
-         "log_to_artifacts": "03_wandb_utils.ipynb"}
+         "log_to_artifacts": "03_wandb_utils.ipynb",
+         "log_images": "04_wandb_viz.ipynb"}
 
 modules = ["data.py",
            "preprocess.py",

@@ -501,34 +501,6 @@ nb_path: "nbs\02_utils.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># data_patient_path = TRAIN_PATH / os.listdir(TRAIN_PATH)[0]</span>
-
-<span class="c1"># # construct path based on csv and TRAIN_PATH</span>
-<span class="c1"># train_df[&#39;path&#39;] = train_df.apply(lambda row: get_patient_BraTS21ID_path(row, TRAIN_PATH), axis=1)</span>
-<span class="c1"># train_meta_df = get_all_BraTS21_dicom_meta(train_df[:2], KAGGLE_BRAINTUMOR_META_COLS, scan_types, n_jobs, True)</span>
-
-<span class="c1"># # folder_exists = train_df[&#39;path&#39;] == str(data_patient_path)+&#39;/&#39;</span>
-<span class="c1"># # train_df = train_df[folder_exists]</span>
-
-<span class="c1"># # Again failing because of windows path issue</span>
-<span class="c1"># # assert len(train_df) &gt;= 1</span>
-<span class="c1"># # assert len(get_all_dicom_metadata(train_df, kaggle_braintumor_meta_cols)) == 8</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Returns the MRI's plane from the dicom data.</p>

@@ -49,43 +49,43 @@ nb_path: "nbs\04_wandb_viz.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def plot_basic_charts(</span>
-<span class="c1">#     chart_type:str=&#39;line&#39;,  #  Choose a basic chart type to plot, &#39;line&#39;, &#39;bar&#39;, &#39;scatter&#39; (default:&#39;line&#39;)</span>
-<span class="c1">#     x_data:str=None,  # x-axis data</span>
-<span class="c1">#     y_data:str=None,  # y-axis data.</span>
-<span class="c1">#     x_name:str=None,  # x-axis name.</span>
-<span class="c1">#     y_name:str=None,  # y-axis name.</span>
-<span class="c1">#     chart_title:str=None,  # Chart title.</span>
-<span class="c1">#     wandb_chart_name:str=&#39;basic-chart&#39;  # Chart name.</span>
-<span class="c1"># ):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_basic_charts</span><span class="p">(</span>
+    <span class="n">chart_type</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span>  <span class="c1">#  Choose a basic chart type to plot, &#39;line&#39;, &#39;bar&#39;, &#39;scatter&#39; (default:&#39;line&#39;)</span>
+    <span class="n">x_data</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># x-axis data</span>
+    <span class="n">y_data</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># y-axis data.</span>
+    <span class="n">x_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># x-axis name.</span>
+    <span class="n">y_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># y-axis name.</span>
+    <span class="n">chart_title</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Chart title.</span>
+    <span class="n">wandb_chart_name</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;basic-chart&#39;</span>  <span class="c1"># Chart name.</span>
+<span class="p">):</span>
 
-<span class="c1">#     &#39;&#39;&#39;</span>
-<span class="c1">#     Plot basic W&amp;B charts.</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Plot basic W&amp;B charts.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    #### Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    **Plot a simple line chart**</span>
+<span class="sd">    plot_basic_charts(chart_type=&#39;line&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple line chart&quot;)</span>
+<span class="sd">    </span>
+<span class="sd">    **Plot a simple bar chart**</span>
+<span class="sd">    plot_basic_charts(chart_type=&#39;bar&#39;, x_data=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple bar chart&quot;)</span>
+<span class="sd">    </span>
+<span class="sd">    Note: When plotting a bar chart, x_data is the labels while y_data is the values.</span>
+<span class="sd">    </span>
+<span class="sd">    **Plot a simple scatter chart**</span>
+<span class="sd">    plot_basic_charts(chart_type=&#39;scatter&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple scatter chart&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)]</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">wandb</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">])</span>
     
-<span class="c1">#     #### Examples</span>
-<span class="c1">#     --------</span>
-<span class="c1">#     **Plot a simple line chart**</span>
-<span class="c1">#     plot_basic_charts(chart_type=&#39;line&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple line chart&quot;)</span>
-    
-<span class="c1">#     **Plot a simple bar chart**</span>
-<span class="c1">#     plot_basic_charts(chart_type=&#39;bar&#39;, x_data=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple bar chart&quot;)</span>
-    
-<span class="c1">#     Note: When plotting a bar chart, x_data is the labels while y_data is the values.</span>
-    
-<span class="c1">#     **Plot a simple scatter chart**</span>
-<span class="c1">#     plot_basic_charts(chart_type=&#39;scatter&#39;, x_data=[1,2,3,4,5], y_data=[1,2,3,4,5], x_name=&quot;x&quot;, y_name=&quot;y&quot;, chart_title=&quot;Simple scatter chart&quot;)</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
-    
-<span class="c1">#     data = [[x, y] for (x, y) in zip(x_data, y_data)]</span>
-<span class="c1">#     table = wandb.Table(data=data, columns = [x_name, y_name])</span>
-    
-<span class="c1">#     if chart_type == &#39;line&#39;:</span>
-<span class="c1">#         wandb.log({f&quot;{wandb_chart_name}&quot; : wandb.plot.line(table, x_name, y_name, title=chart_title)})</span>
-<span class="c1">#     elif chart_type == &#39;bar&#39;:</span>
-<span class="c1">#         wandb.log({f&quot;{wandb_chart_name}&quot; : wandb.plot.bar(table, x_name, y_name, title=chart_title)})</span>
-<span class="c1">#     elif chart_type == &#39;scatter&#39;:</span>
-<span class="c1">#         wandb.log({f&quot;{wandb_chart_name}&quot; : wandb.plot.scatter(table, x_name, y_name, title=chart_title)})</span>
+    <span class="k">if</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;line&#39;</span><span class="p">:</span>
+        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
+    <span class="k">elif</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span>
+        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
+    <span class="k">elif</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s1">&#39;scatter&#39;</span><span class="p">:</span>
+        <span class="n">wandb</span><span class="o">.</span><span class="n">log</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">wandb_chart_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="n">wandb</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">x_name</span><span class="p">,</span> <span class="n">y_name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">chart_title</span><span class="p">)})</span>
 </pre></div>
 
     </div>
@@ -125,37 +125,45 @@ nb_path: "nbs\04_wandb_viz.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#     images:list, # List of image array/PIL Images or image files to log.</span>
-<span class="c1">#     log_as_sequence:bool=False,):</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
-<span class="c1">#     Log images to wandb. You can pass in list of images as ndarray, PIL Image, or filepath.</span>
-    
-<span class="c1">#     #### Examples</span>
-<span class="c1">#     --------</span>
-<span class="c1">#     **Log images as sequence**</span>
-<span class="c1">#     log_images(images=[&quot;image1.png&quot;, &quot;image2.png&quot;], log_as_sequence=True)</span>
-<span class="c1">#     log_images(images=[image1, image2], log_as_sequence=True)</span>
+<div class="output_wrapper">
+<div class="output">
 
-    
-<span class="c1">#     **Log images as grid**</span>
-<span class="c1">#     log_images(images=[&quot;image1.png&quot;, &quot;image2.png&quot;, &quot;image3.png&quot;], log_as_sequence=False)</span>
-<span class="c1">#     log_images(images=[image1.png, image2.png, image3], log_as_sequence=False)</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
+<div class="output_area">
 
-<span class="c1">#     if log_as_sequence: # The images are logged with a *slider*. Ideal for visualizing sequences.</span>
-<span class="c1">#         for image in images:</span>
-<span class="c1">#             wandb.log({&quot;image&quot;: wandb.Image(image)})</span>
-<span class="c1">#     else: # The images are logged as grid. Ideal for visualizing single images.</span>
-<span class="c1">#         wandb.log({&quot;image&quot; : [wandb.Image(image) for image in images]})</span>
-</pre></div>
 
-    </div>
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="log_images" class="doc_header"><code>log_images</code><a href="https://github.com/ayulockin/kagglerecipes/tree/main/kagglerecipes/wandb_viz.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>log_images</code>(<strong><code>images</code></strong>:<code>list</code>, <strong><code>log_as_sequence</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+</blockquote>
+<p>Log images to wandb. You can pass in list of images as ndarray, PIL Image, or filepath.</p>
+<h4 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h4><hr>
+<p><strong>Log images as sequence</strong>
+log_images(images=["image1.png", "image2.png"], log_as_sequence=True)
+log_images(images=[image1, image2], log_as_sequence=True)</p>
+<p><strong>Log images as grid</strong>
+log_images(images=["image1.png", "image2.png", "image3.png"], log_as_sequence=False)
+log_images(images=[image1.png, image2.png, image3], log_as_sequence=False)</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>images</code></strong> : <em><code>&lt;class 'list'&gt;</code></em>    <p>List of image array/PIL Images or image files to log.</p></li>
+</ul>
+<ul>
+<li><strong><code>log_as_sequence</code></strong> : <em><code>&lt;class 'bool'&gt;</code></em>, <em>optional</em></li>
+</ul>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
